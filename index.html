@@ -25,7 +25,9 @@ if(self != top) {
 } else {
 	var url = document.location.search;
 	url = url.substring(url.indexOf("?") + 1, url.length);
-	alert(url);
+	if(url.hostname == "comp-market.000webhostapp.com"){
+		document.location.href = url;
+	}
 }
 </script>
 </head>
