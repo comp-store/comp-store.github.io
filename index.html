@@ -22,6 +22,10 @@ position: absolute;
         <script>
 if(self != top) {
     document.location.href = "0.html";
+} else {
+	var url = document.loacation.search;
+	url = url.substring(url.indexOf("?") + 1, url.length);
+	alert(url);
 }
 </script>
 </head>
