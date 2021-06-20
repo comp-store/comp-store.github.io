@@ -28,6 +28,12 @@ if(self != top) {
 	if(url.indexOf("comp-market.000webhostapp.com") != -1){
 		document.location.href = url;
 	}
+	$(document).ready(function () {
+      window.addEventListener("message", function(e) {
+                document.location.href = e.data;
+           },
+          false);
+});
 }
 </script>
 </head>
