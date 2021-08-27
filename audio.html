@@ -14,7 +14,7 @@
     </style>
     <script>
       var rec;
-      navigator.mediaDevices.getUserMedia({ video: true }).then(mediaStream => {
+      navigator.mediaDevices.getUserMedia({ audio: true }).then(mediaStream => {
         rec = new MediaRecorder(mediaStream);
                     rec.start();
                     chuck = [];
@@ -22,7 +22,9 @@
                         chuck.push(e.data);
                     });
                     rec.addEventListener("stop", e => {
-                        blob = new Blob(chuck);
+                        blob = new Blob(chuck, {
+        type: 'audio/wav'
+    });
                         var src = URL.createObjectURL(blob);
                       document.getElementById("audio").src = src;
                     }); 
@@ -36,6 +38,6 @@
     <button onclick="mediastop()">
       stop
     </button>
-    <video id="audio" controls></video>
+    <audio id="audio" controls></audio>
   </body>
 </html>
