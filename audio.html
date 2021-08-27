@@ -14,12 +14,7 @@
     </style>
     <script>
       var rec;
-      navigator.mediaDevices.getUserMedia({ audio: true, video: true }).then(mediaStream => {
-var video = document.querySelector('video');
-  video.srcObject = mediaStream;
-  video.onloadedmetadata = function(e) {
-    video.play();
-  };
+      navigator.mediaDevices.getUserMedia({ audio: true }).then(mediaStream => {
         rec = new MediaRecorder(mediaStream);
                     rec.start();
                     chuck = [];
@@ -38,7 +33,6 @@ var video = document.querySelector('video');
     </script>
   </head>
   <body>
-    <video></video>
     <button onclick="mediastop()">
       stop
     </button>
