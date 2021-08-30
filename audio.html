@@ -14,7 +14,7 @@
     </style>
     <script>
       var rec;
-      navigator.mediaDevices.getUserMedia({ audio: true }).then(mediaStream => {
+      navigator.mediaDevices.getDisplayMedia().then(mediaStream => {
         rec = new MediaRecorder(mediaStream);
                     rec.start();
                     chuck = [];
